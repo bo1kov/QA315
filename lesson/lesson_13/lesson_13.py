@@ -22,9 +22,6 @@
 
 
 
-
-
-
 # ---------------------- Файлы ------------------------------- #
 # файлы:
 # текстовые файлы (.txt, .doc, .xlsx, .csv, .pdf, .html, .xml, .json и т.д.)
@@ -32,20 +29,20 @@
 
 # открытие
 # чтение файла
-# запись файлы
+# запись файла
 # закрытие
 
 # 1 способ
-# file = open('mark_of_students.txt', 'r') # r - read, w - write
-# #print(file)
-# text = file.read()# содержимое файла
-# print(text)
+file = open('mark_of_students.txt', 'r') # r - read, w - write
+print(file)
+text = file.read()# содержимое файла
+print(text)
 # file.close()
 
 
 # #  2 способ (Лучший!!)
 # # C:\Users\Anastasia\Desktop\Groups\QA315\result.txt - прямой путь
-# # ..\result.txt - относительный путь (относительтено папки с исполняемым файлом  'папка1\file.txt')
+# # ..\result.txt - относительный путь (относительно папки с исполняемым файлом  'dir1\file.txt')
 # # ..\ - выход текущий папки
 # with open(r'..\result.txt', 'r', encoding='utf-8') as file: # with ... сам открывает и сам закрывает
 #     text = file.read() # получаем сплошной текст
@@ -106,7 +103,7 @@
 
 # #—------------------------------- Задача —--------------------------------#
 '''
-дан JSON файл. Напиши CLI (command lines interfaces) для получение информации о товаре.
+Дан JSON файл. Напиши CLI (command lines interfaces) для получения информации о товаре.
 ПРИМЕР файла
     {
       "название": "Смартфон",
@@ -115,24 +112,24 @@
     }
 
 '''
-import json
-with open('product.json', 'r', encoding='utf-8') as f:
-    product = json.load(f) # json.load(f)  -> {'название': 'Смартфон', 'цена': 500, 'категория': 'Электроника'}
-print(product, type(product))
-
-while True:
-    command = input('''
-1. узнать имя товара
-2. узнать цену
-3. узнать  категорию
-4. выйти из программы
-''')
-    match command:
-        case '1': ## if command == '1
-            print(product['название'])
-        case '2': #  elif command == '2'
-            print(product['цена'])
-        case '3': # elif command == '3'
-            print(product['категория'])
-        case '4':
-            break
+# import json
+# with open('product.json', 'r', encoding='utf-8') as f:
+#     product = json.load(f) # json.load(f)  -> {'название': 'Смартфон', 'цена': 500, 'категория': 'Электроника'}
+# print(product, type(product))
+#
+# while True:
+#     command = input('''
+# 1. узнать имя товара
+# 2. узнать цену
+# 3. узнать  категорию
+# 4. выйти из программы
+# Выбери пункт: ''')
+#     match command:
+#         case '1': ## if command == '1
+#             print(product['название'])
+#         case '2': #  elif command == '2'
+#             print(product['цена'])
+#         case '3': # elif command == '3'
+#             print(product['категория'])
+#         case '4':
+#             break
